@@ -2,10 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateCartItem } from "../redux/actions/cartActions";
 import { FaTrash } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
@@ -13,6 +15,10 @@ const Cart = () => {
 
   const handleUpdate = (id, quantity) => {
     dispatch(updateCartItem(id, quantity));
+  };
+
+  const handlePlaceOrder = () => {
+    navigate("/order-success");
   };
 
   return (
@@ -32,6 +38,7 @@ const Cart = () => {
           </button>
         </div>
       ))}
+      <button onClick={handlePlaceOrder}>Place Order</button>
     </div>
   );
 };
