@@ -1,23 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/actions/cartActions';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
-    navigate('/cart');
+  const handleImageClick = () => {
+    // Navigate to the product details page
+    navigate(`/product-details/${product.id}`); // Assuming you want to pass the product ID to the details page
   };
 
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.title} />
+      <img 
+        src={product.image} 
+        alt={product.title} 
+        onClick={handleImageClick} // Clicking the image navigates to the product details page
+      />
       <h3>{product.title}</h3>
       <p>${product.price}</p>
-      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };

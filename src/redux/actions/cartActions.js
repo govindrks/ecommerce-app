@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART_ITEM } from '../types';
+import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART, UPDATE_CART_ITEM } from '../types';
 
 export const addToCart = (product) => ({
   type: ADD_TO_CART,
@@ -13,4 +13,8 @@ export const removeFromCart = (id) => ({
 export const updateCartItem = (id, quantity) => ({
   type: UPDATE_CART_ITEM,
   payload: { id, quantity },
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
 });

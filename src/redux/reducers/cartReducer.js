@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART_ITEM } from '../types';
+import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART_ITEM, CLEAR_CART } from '../types';
 
 const initialState = {
   cartItems: [],
@@ -21,6 +21,11 @@ export const cartReducer = (state = initialState, action) => {
             ? { ...item, quantity: action.payload.quantity }
             : item
         ),
+      };
+    case CLEAR_CART: // Handle clear cart action
+      return {
+        ...state,
+        cartItems: [],
       };
     default:
       return state;

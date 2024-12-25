@@ -1,0 +1,70 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-left .logo {
+  text-decoration: none;
+  color: white;
+}
+
+/* Link Styles */
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar-right a:hover {
+  color: #f39c12;
+}
+
+/* Icon Styling */
+.navbar-right svg {
+  cursor: pointer;
+}
+
+/* Badge for Item Count */
+.wishlist-link,
+.cart-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.wishlist-count,
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Badge for Cart Count */
+.cart-count {
+  background-color: #3498db;
+}
